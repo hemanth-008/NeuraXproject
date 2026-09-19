@@ -1,0 +1,15 @@
+pandas
+numpy
+scipy
+scikit-learn
+lightgbm
+statsmodels
+pyarrow
+openpyxl
+pyyaml
+python-dotenv
+plotly
+streamlit
+matplotlib
+simpy
+ruptures

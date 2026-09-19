@@ -1,0 +1,4 @@
+# QualityTwin configuration
+data_folder: "C:\\Users\\HP\\Downloads\\Manufacturing Data Shared Facility - Discrete-Event Simulation\\Manufacturing Data Shared Facility - Discrete-Event Simulation"
+output_folder: "artifacts"
+app_title: "QualityTwin"
