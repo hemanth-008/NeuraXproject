@@ -1,0 +1,15 @@
+---
+# AGENTS.md - QualityTwin (NEURAX 3.0, Domain 2)
+- Read docs/NEURAX_Master_Plan.md (5A data facts, 6 artifact contract, 11 ledger, 12 decisions), docs/NEURAX_GodTier_Plan_v2.md and docs/NEURAX_Execution_Plan_v3.md first.
+- Windows + PowerShell, Python in .venv. The app and inference must run CPU-only and OFFLINE. No CDN assets, web fonts, remote images or network calls in the app.
+- Entry points: `streamlit run app.py` and `python run_pipeline.py --stage <name>`.
+- Contract-first: files in artifacts/ must validate against contracts/*.schema.json. Never rename or drop a field; add optional fields only.
+- NEVER read, evaluate on, or reference locked-holdout rows in artifacts/splits.csv. Only scripts/eval_locked_holdout.py may read them, and only a human runs it.
+- Never hard-code a metric into the UI or docs. Read it from artifacts/*.json|csv; show "n/a" if missing.
+- Anything derived from an assumption carries its assumption id (D14, D17/D24, D18, A-cause, A-map, economics) and the ADVISORY/SIMULATED tag. Wording: association, not proven causation.
+- Do not commit data/, kaggle_upload/, kaggle_downloads/, .venv/. Model weights go in artifacts/models/ (fp16, each < 50 MB).
+- While several agents share the folder: stay on the current branch, never git add -A, commit only explicit paths, never stash/reset/clean/checkout.
+- pytest -q and python scripts/validate_artifacts.py (once it exists) must pass before you say done.
+- Final report = files changed, how to run it, what you could NOT verify. Do not claim anything you did not run. Do not invent numbers.
+- Do not edit files outside your task's allowed list.
+---

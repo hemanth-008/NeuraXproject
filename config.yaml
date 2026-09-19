@@ -2,3 +2,10 @@
 data_folder: "C:\\Users\\HP\\Downloads\\Manufacturing Data Shared Facility - Discrete-Event Simulation\\Manufacturing Data Shared Facility - Discrete-Event Simulation"
 output_folder: "artifacts"
 app_title: "QualityTwin"
+
+economics:
+  c_escape: 50
+  c_false_reject: 5
+  c_review: 1
+sim:
+
