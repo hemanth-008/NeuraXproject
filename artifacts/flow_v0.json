@@ -1,0 +1,122 @@
+{
+  "model1": {
+    "summary": [
+      {
+        "column": "Assembly Waiting Time",
+        "kind": "queue",
+        "mean": 97.11586227299999,
+        "p95": 238.51600845,
+        "max": 244.006984
+      },
+      {
+        "column": "Drilling Waiting Time",
+        "kind": "queue",
+        "mean": 31.158644086,
+        "p95": 159.24792324999993,
+        "max": 257.618175
+      },
+      {
+        "column": "Milling Waiting Time",
+        "kind": "queue",
+        "mean": 4.5718666666666666e-05,
+        "p95": 0.00015904999999999972,
+        "max": 0.00039
+      },
+      {
+        "column": "Assembly Util",
+        "kind": "utilization",
+        "mean": 0.7759120273333333,
+        "p95": 0.996129,
+        "max": 0.996373
+      },
+      {
+        "column": "Drilling Util",
+        "kind": "utilization",
+        "mean": 0.6488097203333334,
+        "p95": 0.999985,
+        "max": 0.999999
+      },
+      {
+        "column": "Milling Util",
+        "kind": "utilization",
+        "mean": 0.48556231366666663,
+        "p95": 0.74830685,
+        "max": 0.752147
+      }
+    ],
+    "bottleneck_v0": {
+      "candidate_bottleneck": "Assembly Util",
+      "utilization": 0.7759120273333333,
+      "ranking": {
+        "Assembly Util": 0.7759,
+        "Drilling Util": 0.6488,
+        "Milling Util": 0.4856
+      }
+    }
+  },
+  "model2": {
+    "summary": [
+      {
+        "column": "Drilling Queue Time",
+        "kind": "queue",
+        "mean": 2.4623344953333337,
+        "p95": 11.228161699999976,
+        "max": 71.015454
+      },
+      {
+        "column": "Assembly Queue Time",
+        "kind": "queue",
+        "mean": 1.4002822646666666,
+        "p95": 2.92535285,
+        "max": 2.940341
+      },
+      {
+        "column": "Milling Queue Time",
+        "kind": "queue",
+        "mean": 0.33829630666666666,
+        "p95": 1.5017703499999995,
+        "max": 3.339232
+      },
+      {
+        "column": "Assembly Utilization",
+        "kind": "utilization",
+        "mean": 0.683470986,
+        "p95": 0.99753305,
+        "max": 0.997833
+      },
+      {
+        "column": "Drilling Utilization",
+        "kind": "utilization",
+        "mean": 0.520993368,
+        "p95": 0.9433500999999999,
+        "max": 0.999918
+      },
+      {
+        "column": "Milling Utilization",
+        "kind": "utilization",
+        "mean": 0.39186225433333327,
+        "p95": 0.7161941999999999,
+        "max": 0.823238
+      }
+    ],
+    "bottleneck_v0": {
+      "candidate_bottleneck": "Assembly Utilization",
+      "utilization": 0.683470986,
+      "ranking": {
+        "Assembly Utilization": 0.6835,
+        "Drilling Utilization": 0.521,
+        "Milling Utilization": 0.3919
+      }
+    }
+  },
+  "model3_time_check": {
+    "n_rows": 605620,
+    "n_unique_time_now": 1,
+    "min": 24.0,
+    "max": 24.0,
+    "value_counts_head": {
+      "24": 605620
+    },
+    "interpretation": "single snapshot across all replicates"
+  }
+}
