@@ -80,8 +80,9 @@ with tab_inspect:
                 st.write(f"**Family:** {row['pred_family']}")
                 if "p_defect" in row and pd.notna(row["p_defect"]):
                     st.write(f"**Confidence:** {row['p_defect']:.2%}")
-                if "conformal_set" in row and pd.notna(row["conformal_set"]):
-                    st.write(f"**Conformal set:** {row['conformal_set']}")
+                conformal_set = row.get("conformal_set")
+                if conformal_set is not None and not (isinstance(conformal_set, float) and pd.isna(conformal_set)):
+                    st.write(f"**Conformal set:** {conformal_set}")
 
                 img_path = Path("data") / row["image_path"] if "image_path" in row else None
                 if img_path and img_path.exists():
