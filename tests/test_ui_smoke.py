@@ -3,7 +3,7 @@ import pytest
 import os
 
 def test_app_next_smoke():
-    at = AppTest.from_file("../app_next.py")
+    at = AppTest.from_file("../app.py")
     at.run()
     assert not at.exception, f"App crashed with: {at.exception}"
 
