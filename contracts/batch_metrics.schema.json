@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://neurax.local/contracts/batch_metrics.schema.json",
+  "title": "Batch metrics parquet contract",
+  "type": "object",
+  "additionalProperties": true,
+  "x-artifact-type": "parquet",
+  "x-columns": {
+    "batch_id": {"required": true, "dtype": "string"},
+    "ts": {"required": true, "dtype": "object"},
+    "variant": {"required": true, "dtype": "string"},
+    "n_units": {"required": true, "dtype": "integer"},
+    "defect_rate_crack": {"required": true, "dtype": "number"},
+    "defect_rate_hole": {"required": true, "dtype": "number"},
+    "defect_rate_rust": {"required": true, "dtype": "number"},
+    "defect_rate_scratch": {"required": true, "dtype": "number"},
+    "fpy": {"required": true, "dtype": "number"},
+    "drift_flags": {"required": true, "dtype": "object"}
+  },
+  "x-required-any-of": [["process_parameters", "coolant_humidity", "fixture_wear", "tool_wear_hours", "ambient_temp_c", "spindle_vibration"]]
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://neurax.local/contracts/novelty.schema.json",
+  "title": "Novelty detection contract",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["meta", "knn"],
+  "properties": {"meta": {"$ref": "#/$defs/meta"}, "knn": {"type": "object"}},
+  "$defs": {"meta": {"type": "object", "additionalProperties": true, "required": ["generated_at", "source", "assumption_ids", "tag"], "properties": {"generated_at": {"type": "string"}, "source": {"type": "string"}, "assumption_ids": {"type": "array", "items": {"type": "string"}}, "tag": {"type": "string"}}}}
+}

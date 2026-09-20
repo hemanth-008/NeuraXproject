@@ -423,7 +423,10 @@ class InferenceEngine:
             probs = _softmax(self.torch, logits.unsqueeze(0))
         top = np.argsort(probs)[::-1]
         uncertain = len([p for p in probs if p >= 1.0 - self.runtime.q_hat]) == 0 or (probs[2] >= 1.0 - self.runtime.q_hat and any(probs[i] >= 1.0 - self.runtime.q_hat for i in (0, 1, 3, 4)))
-        novel_score = self._novelty(embedding) if embedding is not None else None
+        try:
+            novel_score = self._novelty(embedding) if embedding is not None else None
+        except Exception:
+            novel_score = None
         novel = novel_score is not None and self.runtime.novelty_threshold is not None and novel_score > self.runtime.novelty_threshold
         decision, family, p_defect, conformal, top2 = self._decision(probs, uncertain, novel)
         heatmap = None

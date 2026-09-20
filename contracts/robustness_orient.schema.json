@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://neurax.local/contracts/robustness_orient.schema.json",
+  "title": "Orientation and robustness CSV contract",
+  "type": "object",
+  "additionalProperties": true,
+  "x-artifact-type": "csv",
+  "x-columns": {
+    "perturbation": {"required": true, "dtype": "string"},
+    "acc": {"required": true, "dtype": "number"},
+    "macro_f1": {"required": true, "dtype": "number"},
+    "n": {"required": true, "dtype": "integer"},
+    "fold": {"required": true, "dtype": "object"}
+  }
+}

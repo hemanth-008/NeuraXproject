@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://neurax.local/contracts/rootcause_recovery.schema.json",
+  "title": "Planted-effect recovery contract",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["meta", "planted_effects", "found_effects", "matches", "false_positives", "misses", "no_link_control_clean"],
+  "properties": {"meta": {"$ref": "#/$defs/meta"}, "planted_effects": {"type": "array"}, "found_effects": {"type": "array"}, "matches": {"type": "array"}, "false_positives": {"type": "array"}, "misses": {"type": "array"}, "no_link_control_clean": {"type": "boolean"}},
+  "$defs": {"meta": {"type": "object", "additionalProperties": true, "required": ["generated_at", "source", "assumption_ids", "tag"], "properties": {"generated_at": {"type": "string"}, "source": {"type": "string"}, "assumption_ids": {"type": "array", "items": {"type": "string"}}, "tag": {"type": "string"}}}}
+}

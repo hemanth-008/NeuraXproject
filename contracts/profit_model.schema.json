@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://neurax.local/contracts/profit_model.schema.json",
+  "title": "Profit model contract",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["meta", "model_type", "features", "out_of_sample_metrics", "interval_method"],
+  "properties": {"meta": {"$ref": "#/$defs/meta"}, "model_type": {"type": "string"}, "features": {"type": "array"}, "out_of_sample_metrics": {"type": "object"}, "interval_method": {"type": "string"}},
+  "$defs": {"meta": {"type": "object", "additionalProperties": true, "required": ["generated_at", "source", "assumption_ids", "tag"], "properties": {"generated_at": {"type": "string"}, "source": {"type": "string"}, "assumption_ids": {"type": "array", "items": {"type": "string"}}, "tag": {"type": "string"}}}}
+}

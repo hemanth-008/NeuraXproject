@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://neurax.local/contracts/knn_bank.schema.json",
+  "title": "kNN novelty bank NPZ contract",
+  "type": "object",
+  "additionalProperties": true,
+  "x-artifact-type": "npz",
+  "x-npz-keys": ["bank"]
+}

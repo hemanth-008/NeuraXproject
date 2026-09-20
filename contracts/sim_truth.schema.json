@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://neurax.local/contracts/sim_truth.schema.json",
+  "title": "Simulated planted truth contract",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["meta"],
+  "properties": {
+    "meta": {"$ref": "#/$defs/meta"},
+    "planted_effects": {"type": "array", "items": {"type": "object"}}
+  },
+  "anyOf": [{"required": ["planted_effects"]}, {"required": ["effects"]}],
+  "$defs": {"meta": {"type": "object", "additionalProperties": true, "required": ["generated_at", "source", "assumption_ids", "tag"], "properties": {"generated_at": {"type": "string"}, "source": {"type": "string"}, "assumption_ids": {"type": "array", "items": {"type": "string"}}, "tag": {"type": "string"}}}}
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://neurax.local/contracts/replay_stream.schema.json",
+  "title": "Replay stream parquet contract",
+  "type": "object",
+  "additionalProperties": true,
+  "x-artifact-type": "parquet",
+  "x-columns": {
+    "unit_id": {"required": true, "dtype": "string"},
+    "ts": {"required": true, "dtype": "object"},
+    "batch_id": {"required": true, "dtype": "string"},
+    "station": {"required": true, "dtype": "string"},
+    "decision": {"required": true, "dtype": "string"}
+  }
+}

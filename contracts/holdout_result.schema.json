@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://neurax.local/contracts/holdout_result.schema.json",
+  "title": "Locked holdout result contract",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["meta", "n", "accuracy", "macro_f1", "per_class", "confusion_matrix", "frr", "far", "expected_cost", "ece", "conformal_coverage", "uncertain_rate", "novel_rate", "review_rate"],
+  "properties": {"meta": {"$ref": "#/$defs/meta"}, "n": {"type": "integer"}, "accuracy": {"type": "number"}, "macro_f1": {"type": "number"}, "per_class": {"type": "object"}, "confusion_matrix": {"type": "array"}, "frr": {"type": "number"}, "far": {"type": "number"}, "expected_cost": {"type": "number"}, "ece": {"type": "number"}, "conformal_coverage": {"type": "number"}, "uncertain_rate": {"type": "number"}, "novel_rate": {"type": "number"}, "review_rate": {"type": "number"}},
+  "$defs": {"meta": {"type": "object", "additionalProperties": true, "required": ["generated_at", "source", "assumption_ids", "tag"], "properties": {"generated_at": {"type": "string"}, "source": {"type": "string"}, "assumption_ids": {"type": "array", "items": {"type": "string"}}, "tag": {"type": "string"}}}}
+}

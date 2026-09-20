@@ -222,6 +222,49 @@ Copy-Item .env.example .env
 
 Configuration lives in `config.yaml`. `.env` is never committed; only `.env.example` (placeholders) is.
 
+### Reproduce in one command
+
+From a checkout with the offline data/artifacts available, the complete artifact
+path is:
+
+```powershell
+python -m venv .venv
+.venv\Scripts\pip.exe install -r requirements.txt
+.venv\Scripts\python.exe run_pipeline.py --stage all
+streamlit run app.py
+```
+
+`--stage all` runs the idempotent stages in dependency order, writes one log per
+stage under `artifacts/logs/`, writes `artifacts/status.json`, and finishes with
+contract validation. If a Kaggle output folder is present, select it with
+`.venv\Scripts\python.exe run_pipeline.py --stage all --kaggle-run <run-folder>`;
+otherwise existing artifacts are used when they are current. Use
+`--force` to rebuild a stage. The normal infer path is explicitly offline and
+CPU-only:
+
+```powershell
+.venv\Scripts\python.exe run_pipeline.py --stage infer --input data\images\train --output artifacts
+```
+
+It requires shipped model weights and calibration artifacts; it does not tune
+thresholds or temperature. The locked holdout is never part of `--stage all`.
+It has a separate human-gated evaluator and must not be used for tuning:
+`.venv\Scripts\python.exe scripts\eval_locked_holdout.py --confirm`.
+
+### Assumptions register
+
+The organizer files contain image-level labels and production simulation data,
+but no joined batch/process/economic fields. Therefore any cross-layer result
+is labeled `ADVISORY / SIMULATED` and says “association, not proven causation”.
+
+| ID | Register entry |
+|---|---|
+| D14 | Rework coupling uses `rho_new = rho_baseline × (1 + rework_rate)`; rework is not observed in the production files. |
+| D18 | Quality-to-flow and economics coupling is simulated/advisory; economics are read from `config.yaml`. |
+| D22 | Price, unit, scrap, rework, escape, review and downtime costs are explicit `ASSUMED` values because no economics table was provided. |
+| D24 | Simulated batches/process parameters are used to test root-cause recovery; the planted link is not a factory discovery. |
+| D25 | Simulated timestamps, variants and station mappings are labeled assumptions and are not treated as organizer metadata. |
+
 ---
 
 ## 6. Limitations

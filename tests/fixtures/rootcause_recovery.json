@@ -1,0 +1,34 @@
+{
+  "false_positives": [],
+  "found_effects": [
+    {
+      "family": "crack",
+      "form": "monotone",
+      "parameter": "temperature",
+      "size": 0.2,
+      "station": "Assembly"
+    }
+  ],
+  "matches": [
+    "crack"
+  ],
+  "meta": {
+    "assumption_ids": [
+      "D24"
+    ],
+    "generated_at": "2026-01-01T00:00:00Z",
+    "source": "fixture",
+    "tag": "SIMULATED"
+  },
+  "misses": [],
+  "no_link_control_clean": true,
+  "planted_effects": [
+    {
+      "family": "crack",
+      "form": "monotone",
+      "parameter": "temperature",
+      "size": 0.2,
+      "station": "Assembly"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://neurax.local/contracts/evidence_cards.schema.json",
+  "title": "Root-cause evidence cards contract",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["meta", "cards"],
+  "properties": {"meta": {"$ref": "#/$defs/meta"}, "cards": {"type": "array", "items": {"type": "object"}}},
+  "$defs": {"meta": {"type": "object", "additionalProperties": true, "required": ["generated_at", "source", "assumption_ids", "tag"], "properties": {"generated_at": {"type": "string"}, "source": {"type": "string"}, "assumption_ids": {"type": "array", "items": {"type": "string"}}, "tag": {"type": "string"}}}}
+}

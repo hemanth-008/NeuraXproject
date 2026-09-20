@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://neurax.local/contracts/flow_v0.schema.json",
+  "title": "Legacy flow v0 artifact contract",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["meta", "model1", "model2", "model3_time_check"],
+  "properties": {"meta": {"$ref": "#/$defs/meta"}, "model1": {"type": "object"}, "model2": {"type": "object"}, "model3_time_check": {"type": "object"}},
+  "$defs": {"meta": {"type": "object", "additionalProperties": true, "required": ["generated_at", "source", "assumption_ids", "tag"], "properties": {"generated_at": {"type": "string"}, "source": {"type": "string"}, "assumption_ids": {"type": "array", "items": {"type": "string"}}, "tag": {"type": "string"}}}}
+}

@@ -1,0 +1,18 @@
+{
+  "conformal": {
+    "q_hat": 0.1
+  },
+  "cost_table": {},
+  "ece": 0.01,
+  "meta": {
+    "assumption_ids": [
+      "D24"
+    ],
+    "generated_at": "2026-01-01T00:00:00Z",
+    "source": "fixture",
+    "tag": "SIMULATED"
+  },
+  "operating_threshold": 0.5,
+  "reliability_bins": [],
+  "risk_coverage": {}
+}

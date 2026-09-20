@@ -1,0 +1,21 @@
+{
+  "bottleneck": {
+    "station": "Assembly"
+  },
+  "evidence": [],
+  "loss_waterfall": [],
+  "meta": {
+    "assumption_ids": [
+      "D24"
+    ],
+    "generated_at": "2026-01-01T00:00:00Z",
+    "source": "fixture",
+    "tag": "SIMULATED"
+  },
+  "stations": [
+    {
+      "rho": 0.7,
+      "station": "Assembly"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://neurax.local/contracts/sim_results.schema.json",
+  "title": "Simulation results parquet contract",
+  "type": "object",
+  "additionalProperties": true,
+  "x-artifact-type": "parquet",
+  "x-columns": {
+    "scenario_id": {"required": false, "dtype": "string"},
+    "parameters": {"required": false, "dtype": "object"},
+    "model": {"required": false, "dtype": "string"},
+    "demand_level": {"required": false, "dtype": "integer"},
+    "rework_rate": {"required": false, "dtype": "number"},
+    "capacity_plus_at_bottleneck": {"required": false, "dtype": "number"},
+    "bottleneck_station": {"required": false, "dtype": "string"},
+    "replications": {"required": false, "dtype": "integer"},
+    "throughput_mean": {"required": true, "dtype": "number"},
+    "throughput_ci": {"required": false, "dtype": "object"},
+    "throughput_p05": {"required": false, "dtype": "number"},
+    "throughput_p95": {"required": false, "dtype": "number"},
+    "wip": {"required": false, "dtype": "number"},
+    "wip_mean": {"required": false, "dtype": "number"},
+    "wip_p05": {"required": false, "dtype": "number"},
+    "wip_p95": {"required": false, "dtype": "number"},
+    "tag": {"required": false, "dtype": "object"},
+    "margin_mean": {"required": false, "dtype": "number"},
+    "margin_ci": {"required": false, "dtype": "object"}
+  },
+  "x-required-any-of": [["scenario_id", "model"], ["parameters", "demand_level"], ["wip", "wip_mean"], ["throughput_ci", "throughput_p05"]]
+}

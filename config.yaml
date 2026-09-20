@@ -4,8 +4,15 @@ output_folder: "artifacts"
 app_title: "QualityTwin"
 
 economics:
-  c_escape: 50
-  c_false_reject: 5
-  c_review: 1
+  # ASSUMED / D22: organizers supplied no economics; values are advisory only.
+  c_escape: {value: 50, assumption_id: "economics.c_escape", tag: "ASSUMED"}
+  c_false_reject: {value: 5, assumption_id: "economics.c_false_reject", tag: "ASSUMED"}
+  c_review: {value: 1, assumption_id: "economics.c_review", tag: "ASSUMED"}
+  # ASSUMED / D18: optional economics used by the simulated profit layer.
+  price: {value: 100, assumption_id: "economics.price", tag: "ASSUMED"}
+  unit_cost: {value: 20, assumption_id: "economics.unit_cost", tag: "ASSUMED"}
+  scrap_cost: {value: 30, assumption_id: "economics.scrap_cost", tag: "ASSUMED"}
+  rework_cost: {value: 10, assumption_id: "economics.rework_cost", tag: "ASSUMED"}
+  downtime_cost_per_hour: {value: 250, assumption_id: "economics.downtime_cost_per_hour", tag: "ASSUMED"}
 sim:
 

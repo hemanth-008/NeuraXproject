@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://neurax.local/contracts/sim_unit_map.schema.json",
+  "title": "Simulated unit map parquet contract",
+  "type": "object",
+  "additionalProperties": true,
+  "x-artifact-type": "parquet",
+  "x-columns": {
+    "unit_id": {"required": true, "dtype": "string"},
+    "batch_id": {"required": true, "dtype": "string"},
+    "variant": {"required": true, "dtype": "string"},
+    "station": {"required": true, "dtype": "string"},
+    "condition": {"required": true, "dtype": "string"},
+    "ts": {"required": true, "dtype": "object"}
+  }
+}

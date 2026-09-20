@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://neurax.local/contracts/calibration.schema.json",
+  "title": "Calibration and decision contract",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["meta", "ece", "reliability_bins", "risk_coverage", "conformal", "operating_threshold", "cost_table"],
+  "properties": {"meta": {"$ref": "#/$defs/meta"}, "ece": {}, "reliability_bins": {"type": "array"}, "risk_coverage": {"type": "object"}, "conformal": {"type": "object"}, "operating_threshold": {}, "cost_table": {"type": "object"}},
+  "$defs": {"meta": {"type": "object", "additionalProperties": true, "required": ["generated_at", "source", "assumption_ids", "tag"], "properties": {"generated_at": {"type": "string"}, "source": {"type": "string"}, "assumption_ids": {"type": "array", "items": {"type": "string"}}, "tag": {"type": "string"}}}}
+}

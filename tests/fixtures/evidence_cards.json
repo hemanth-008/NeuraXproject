@@ -1,0 +1,18 @@
+{
+  "cards": [
+    {
+      "caveat": "association, not proven causation",
+      "family": "crack",
+      "hypothesis": "fixture",
+      "id": "FIXTURE_CARD_001"
+    }
+  ],
+  "meta": {
+    "assumption_ids": [
+      "D24"
+    ],
+    "generated_at": "2026-01-01T00:00:00Z",
+    "source": "fixture",
+    "tag": "SIMULATED"
+  }
+}
