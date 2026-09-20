@@ -251,6 +251,16 @@ thresholds or temperature. The locked holdout is never part of `--stage all`.
 It has a separate human-gated evaluator and must not be used for tuning:
 `.venv\Scripts\python.exe scripts\eval_locked_holdout.py --confirm`.
 
+**Current build note.** Root Cause, Profit & What-if, Recommended Actions, and
+Trust render from the existing evidence, profit, recommendation, calibration,
+status, and final holdout artifacts; none of the four pages is soft-failed. The
+complete `--stage all` command currently stops at contract validation because
+`kaggle_downloads` has no OOF prediction inputs to rebuild calibration/novelty,
+and several existing legacy artifacts do not satisfy the current schemas. The
+Trust page shows that validation state and only displays values present in the
+artifacts. The locked holdout result is final and was not rerun or used for
+tuning.
+
 ### Assumptions register
 
 The organizer files contain image-level labels and production simulation data,
