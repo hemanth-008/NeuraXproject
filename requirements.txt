@@ -10,6 +10,7 @@ pyyaml
 python-dotenv
 plotly
 streamlit
+Pillow
 matplotlib
 simpy
 ruptures

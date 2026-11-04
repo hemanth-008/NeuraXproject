@@ -8,3 +8,7 @@ __pycache__/
 /data/
 
 data/
+
+# Organizer dataset re-upload copy (12,000 images, ~300MB).
+# Not read by the deployed app; the private Kaggle dataset is the canonical copy.
+kaggle_upload/
