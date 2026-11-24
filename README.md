@@ -1,4 +1,4 @@
-# QualityTwin
+# QualityTwin-T8377Z
 
 **A quality-aware digital twin for production lines.**
 Neurax Hackathon 3.0 · Domain 2: AI in Industry and Automation · Problem: *Visual Inspection & Defect Root-Cause Assistant*
